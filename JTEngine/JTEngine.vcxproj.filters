@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="JTEngine">
+      <UniqueIdentifier>{7985CBB1-6552-26BD-8E6B-14657A975B4B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JTEngine\Events">
+      <UniqueIdentifier>{3D2F9709-A9BA-04CE-B2CB-87C21ED660CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JTEngine\Platform">
+      <UniqueIdentifier>{EDF93DE8-5910-3C7E-A287-C79F0EDD0C06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JTEngine\Platform\Windows">
+      <UniqueIdentifier>{2741693C-9303-9DC6-DCB3-2B5348B575A4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\JTEngine.h" />
+    <ClInclude Include="src\JTEngine\Application.h">
+      <Filter>JTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\Core.h">
+      <Filter>JTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\EntryPoint.h">
+      <Filter>JTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\Events\ApplicationEvent.h">
+      <Filter>JTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\Events\Event.h">
+      <Filter>JTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\Events\KeyEvent.h">
+      <Filter>JTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\Events\MouseEvent.h">
+      <Filter>JTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\Log.h">
+      <Filter>JTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\Platform\Windows\WindowsWindow.h">
+      <Filter>JTEngine\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JTEngine\Window.h">
+      <Filter>JTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\jtepch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\JTEngine\Application.cpp">
+      <Filter>JTEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JTEngine\Log.cpp">
+      <Filter>JTEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JTEngine\Platform\Windows\WindowsWindow.cpp">
+      <Filter>JTEngine\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\jtepch.cpp" />
+  </ItemGroup>
+</Project>

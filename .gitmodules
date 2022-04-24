@@ -1,0 +1,6 @@
+[submodule "JTEngine/vendor/spdlog"]
+	path = JTEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "JTEngine/vendor/GLFW"]
+	path = JTEngine/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
