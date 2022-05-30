@@ -1,10 +1,13 @@
 #pragma once
 
+
 #include "Core.h"
+#include "Window.h"
+#include "JTEngine/LayerStack.h"
 #include "Events/Event.h"
 #include "Events/ApplicationEvent.h"
 
-#include "Window.h"
+
 
 namespace JTEngine {
 
@@ -19,6 +22,12 @@ namespace JTEngine {
 
 
 		void OnEvent(Event& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
+
+		inline static Application& Get() { return *s_Instance; }
+		inline Window& GetWindow() { return *m_Window; }
 	private:
 
 		bool OnWindowClose(WindowCloseEvent& e);
@@ -26,9 +35,13 @@ namespace JTEngine {
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		LayerStack m_LayerStack;
+
+	private:
+		static Application* s_Instance;
 	};
 
 	// To be defined in a client
 	Application* CreateApplication();
-} 
+}
 
