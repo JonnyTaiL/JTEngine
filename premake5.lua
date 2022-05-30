@@ -15,7 +15,13 @@ workspace "JTEngine"
 -- include directions relative to root folder (DolutionDir)
 IncludeDir = {}
 IncludeDir["GLFW"] = "JTEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "JTEngine/vendor/Glad/include"
+IncludeDir["ImGui"] = "JTEngine/vendor/imgui"
+
+
 include "JTEngine/vendor/GLFW"
+include "JTEngine/vendor/Glad"
+include "JTEngine/vendor/imgui"
 
 
 
@@ -43,12 +49,16 @@ project "JTEngine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -62,7 +72,8 @@ project "JTEngine"
 		defines
 		{
 			"JTE_PLATFORM_WINDOWS",
-			"JTE_BUILD_DLL"
+			"JTE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 		
 		postbuildcommands 
@@ -72,14 +83,17 @@ project "JTEngine"
 
 	filter "configurations:Debug"
 		defines "JTE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "JTE_Release"
+		buildoptions "/MDd"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "JTE_DIST"
+		buildoptions "/MDd"
 		optimize "On"
 
 
@@ -123,13 +137,16 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "JTE_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "JTE_Release"
+		buildoptions "/MDd"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "JTE_DIST"
+		buildoptions "/MDd"
 		optimize "On"
 
